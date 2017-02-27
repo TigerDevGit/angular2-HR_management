@@ -7,7 +7,7 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Self-Service',
-            icon: 'ion-android-home',
+            icon: 'fa fa-home',
             selected: false,
             expanded: false,
             order: 0
@@ -19,7 +19,7 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Time Tracker',
-            icon: 'ion-edit',
+            icon: 'fa fa-pencil',
             selected: false,
             expanded: false,
             order: 100,
@@ -27,13 +27,37 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'ckeditor',
+            path: 'views',
             data: {
               menu: {
-                title: 'CKEditor',
+                title: 'Views',
               }
             }
-          }
+          },
+          {
+            path: 'reports',
+            data: {
+              menu: {
+                title: 'Reports',
+              }
+            }
+          },
+          {
+            path: 'holidays',
+            data: {
+              menu: {
+                title: 'Holidays',
+              }
+            }
+          },
+          {
+            path: 'settings',
+            data: {
+              menu: {
+                title: 'Settings',
+              }
+            }
+          },
         ]
       },
       {
@@ -41,7 +65,7 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Organization',
-            icon: 'ion-gear-a',
+            icon: 'fa fa-bank',
             selected: false,
             expanded: false,
             order: 250,
@@ -49,13 +73,69 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'treeview',
+            path: 'announcements',
             data: {
               menu: {
-                title: 'Tree View',
+                title: 'Announcements',
               }
             }
-          }
+          },
+          {
+            path: 'organizationtree',
+            data: {
+              menu: {
+                title: 'OrganizationTree',
+              }
+            }
+          },
+          {
+            path: 'groups',
+            data: {
+              menu: {
+                title: 'Groups',
+              }
+            }
+          },
+          {
+            path: 'employee',
+            data: {
+              menu: {
+                title: 'Employee',
+              }
+            }
+          },
+          {
+            path: 'department',
+            data: {
+              menu: {
+                title: 'Department',
+              }
+            }
+          },
+          {
+            path: 'designation',
+            data: {
+              menu: {
+                title: 'Designation',
+              }
+            }
+          },
+          {
+            path: 'exitdetails',
+            data: {
+              menu: {
+                title: 'ExitDetails',
+              }
+            }
+          },
+          {
+            path: 'companypolicy',
+            data: {
+              menu: {
+                title: 'CompanyPolicy',
+              }
+            }
+          },
         ]
       },
       {
@@ -63,7 +143,7 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Compensation',
-            icon: 'ion-stats-bars',
+            icon: 'fa fa-clipboard',
             selected: false,
             expanded: false,
             order: 200,
@@ -71,13 +151,21 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'chartist-js',
+            path: 'asset',
             data: {
               menu: {
-                title: 'Chartist.Js',
+                title: 'Asset',
               }
             }
-          }
+          },
+          {
+            path: 'benefit',
+            data: {
+              menu: {
+                title: 'Benefit',
+              }
+            }
+          },
         ]
       },
       {
@@ -85,54 +173,12 @@ export const PAGES_MENU = [
         data: {
           menu: {
             title: 'Approvals',
-            icon: 'ion-android-laptop',
+            icon: 'fa fa-cubes',
             selected: false,
             expanded: false,
             order: 300,
           }
-        },
-        children: [
-          {
-            path: 'typography',
-            data: {
-              menu: {
-                title: 'Typography',
-              }
-            }
-          },
-          {
-            path: 'buttons',
-            data: {
-              menu: {
-                title: 'Buttons',
-              }
-            }
-          },
-          {
-            path: 'icons',
-            data: {
-              menu: {
-                title: 'Icons',
-              }
-            }
-          },
-          {
-            path: 'modals',
-            data: {
-              menu: {
-                title: 'Modals',
-              }
-            }
-          },
-          {
-            path: 'grid',
-            data: {
-              menu: {
-                title: 'Grid',
-              }
-            }
-          },
-        ]
+        }
       },
     ]
   }
