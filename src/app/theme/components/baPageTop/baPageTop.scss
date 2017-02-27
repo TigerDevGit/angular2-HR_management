@@ -2,14 +2,18 @@
 @import '../../components/baMsgCenter/baMsgCenter';
 
 .page-top {
-  background-color: $sidebar;
+  background-color: white;
   position: fixed;
   z-index: 904;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5);
-  height: 66px;
+  height: 44px;
   width: 100%;
   min-width: $resMin;
-  padding: 0 32px 0 40px;
+  // padding: 0 32px 0 40px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 
   .dropdown-toggle::after {
     display: none;
@@ -23,14 +27,16 @@
 }
 
 a.al-logo {
-  color: $sidebar-text;
+  // color: $sidebar-text;
+  color: black;
   display: block;
   font-size: 24px;
   font-family: $font-family;
   white-space: nowrap;
   float: left;
   outline: none !important;
-  line-height: 60px;
+  line-height: initial;
+  // line-height: 60px;
 
   span {
     color: $primary;
@@ -42,18 +48,17 @@ a.al-logo:hover {
 }
 
 .user-profile {
-  float: right;
   min-width: 230px;
-  margin-top: 10px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  align-items: center;
 }
 
 .al-user-profile {
   float: right;
-  margin-right: 12px;
   transition: all .15s ease-in-out;
   padding: 0;
-  width: 36px;
-  height: 36px;
   border: 0;
   opacity: 1;
   position: relative;
@@ -61,9 +66,7 @@ a.al-logo:hover {
     display: block;
   }
   img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    width: 44px;
   }
 }
 
@@ -87,10 +90,11 @@ a.collapse-menu-link {
   display: block;
   text-decoration: none;
   line-height: 42px;
-  color: $sidebar-text;
+  // color: $sidebar-text;
   padding: 0;
   float: left;
-  margin: 11px 0 0 25px;
+  margin: 0 20px;
+  // margin: 11px 0 0 25px;
 
   &:hover {
     text-decoration: none;
@@ -119,6 +123,8 @@ a.collapse-menu-link {
 }
 
 .search {
+  margin-left: 12px;
+  color: #aaa;
   text-shadow: none;
   font-size: 13px;
   line-height: 25px;
@@ -127,7 +133,7 @@ a.collapse-menu-link {
   overflow: hidden;
   width: 162px;
   float: left;
-  margin: 20px 0 0 30px;
+  // margin: 20px 0 0 30px;
 
   label {
     cursor: pointer;
@@ -141,7 +147,7 @@ a.collapse-menu-link {
     margin-right: 13px;
   }
   input {
-    color: $sidebar-text;
+    color: black;
     background: none;
     border: none;
     outline: none;
