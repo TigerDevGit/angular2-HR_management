@@ -1,0 +1,38 @@
+<div class="feeds">
+  <div class="top">
+    <div class="left">
+      <i class="fa fa-file-text"></i>
+      <span>Feeds</span>
+    </div>
+    <div class="right">
+      <i class="fa fa-cog"></i>
+      <i class="fa fa-filter"></i>
+    </div>
+  </div>
+  <div class="content">
+    <div class="new">
+      <img class="lx-img" src="assets/img/app/profile/Nasta.png" alt="">
+      <form (submit)="addComment(newComment.value); newComment.value=''">
+        <input #newComment type="text" placeholder="Type @ to mention someone">
+        <!-- <textarea rows="1" placeholder="Type @ to mention someone"></textarea> -->
+      </form>
+    </div>
+    <div class="comments">
+      <div *ngFor="let comment of comments; let i = index;" class="one">
+        <img class="lx-img" src="assets/img/app/profile/Nasta.png" alt="">
+        <div class="comment-show" (mouseenter)="commentEnter(trash, true)" (mouseleave)="commentEnter(trash, false)">
+          <div class="desc">
+            <p>You have posted a message.</p>
+            <i #trash class="fa fa-trash" (click)="removeComment(i)"></i>
+          </div>
+          <span>{{comment}}</span>
+          <div class="bottom">
+            <span class="time">Today 5:36AM</span>
+            <i class="fa fa-circle"></i>
+            <span class="suffix">Comment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

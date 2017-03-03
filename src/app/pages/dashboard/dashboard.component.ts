@@ -6,8 +6,11 @@ import {Component} from '@angular/core';
   templateUrl: './dashboard.html'
 })
 export class Dashboard {
-
+  tags: Array<string>;
+  isCheckin: boolean;
   constructor() {
+    this.tags = ['manager', 'fininacial'];
+    this.isCheckin = true;
   }
 
 }

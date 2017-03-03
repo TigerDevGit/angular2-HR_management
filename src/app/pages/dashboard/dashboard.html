@@ -1,1 +1,108 @@
-<h1>This is Dashboard</h1>
+<div class="wrapper">
+  <div class="left">
+    <div class="profile">
+      <div class="photo">
+        <img src="assets/img/app/profile/Nasta.png" alt="">
+      </div>
+      <div class="name">
+        <p>Alex Lim - <strong>onetoday1028</strong></p>
+      </div>
+      <div class="status">
+        <div class="check">
+          <span>Status</span>
+          <button (click)="isCheckin=!isCheckin" [class.checkin]="isCheckin">{{isCheckin ? "Check-in" : "Check-out"}}</button>
+        </div>
+        <div class="timezone">
+          <!-- auto complete timezone -->
+          <div class="region">
+            <i class="fa fa-map-marker"></i>
+            <span>Toronto</span>
+          </div>
+          <span title="Eastern Standard Timezone">EST(GMT-05:00)</span>
+        </div>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="top">
+        <p>Tags</p>
+        <i class="fa fa-plus" aria-hidden="true" (click)="smModal.show()"></i>
+      </div>
+      <div class="content">
+        <div *ngFor="let item of tags; let i = index;" class="lx-tag">
+          <span>{{item}}</span>
+          <i class="fa fa-close" (click)="tags.splice(i, 1)"></i>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1 1 auto">&nbsp;</div>
+    <div class="btns" routerLink="/pages/dashboard/feeds" routerLinkActive="active">
+      <div class="icon-btn"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+      <div class="icon-btn"><i class="fa fa-users" aria-hidden="true"></i></div>
+      <div class="icon-btn"><i class="fa fa-star" aria-hidden="true"></i></div>
+      <div class="icon-btn"><i class="fa fa-chain" aria-hidden="true"></i></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="nav">
+      <a routerLink="/pages/dashboard/feeds" routerLinkActive="active">
+        <button>Feeds</button>
+      </a>
+      <a routerLink="/pages/dashboard/profile" routerLinkActive="active">
+        <button>Profile</button>
+      </a>
+      <a routerLink="/pages/dashboard/calendar" routerLinkActive="active">
+        <button>Calendar</button>
+      </a>
+      <a routerLink="/pages/dashboard/goals" routerLinkActive="active">
+        <button>Goals</button>
+      </a>
+      <a routerLink="/pages/dashboard/relatedforms" routerLinkActive="active">
+        <button>RelatedForms</button>
+      </a>
+      <a routerLink="/pages/dashboard/approvals" routerLinkActive="active">
+        <button>Approvals</button>
+      </a>
+    </div>
+    <div class="coms-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header" style="display: flex; justify-content: space-between; padding-bottom: 0px;">
+        <h4 class="modal-title pull-left" style="width: auto;">Tags</h4>
+        <div style="flex: 1; text-align: center; transform: translateY(-80%);">
+          <i class="fa fa-tags fa-2x" style="background: royalblue; color: white; border-radius: 50%; padding: 10px;"></i>
+        </div>
+        <i class="fa fa-close" (click)="smModal.hide()" style="color: tomato;"></i>
+      </div>
+      <div class="modal-body" style="display: flex; flex-flow: row wrap;">
+        <div *ngFor="let item of tags; let i = index;" class="lx-tag" style="margin: 5px; background: #e6f0f7; padding: 4px; color: #666; border-radius: 5px;">
+          <span>{{item}}</span>
+          <i class="fa fa-close" (click)="tags.splice(i, 1)" style="color: #224;"></i>
+        </div>
+        <div class="lx-addtag" style="flex: 1 1 100%">
+          <form>
+            <textarea #newtag cols="30" rows="3"></textarea>
+            <p style="color: #999;">Note: Add comma to seperate tags</p>
+            <hr>
+            <div style="display: flex; justify-content: center;">
+              <button class="lx-btn" style="background: cornflowerblue; color: white;" (click)="tags=tags.concat(newtag.value.split(','));smModal.hide();">Submit</button>
+              <button class="lx-btn" (click)="smModal.hide()">Cancel</button>
+              <style>
+              .lx-btn {
+                border: 1px cornflowerblue solid;
+                padding: 5px 10px;
+                margin: 10px;
+                background: white;
+              }
+              </style>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -137,12 +137,12 @@ a {
 }
 
 .al-content {
-  padding: 8px 32px 8px 40px;
+  // padding: 8px 8px 8px 0px;
 }
 
 @media screen and (max-width: $resXS) {
   .al-content {
-    padding: 8px 20px;
+    // padding: 8px 20px;
   }
 }
 
