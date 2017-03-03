@@ -15,6 +15,8 @@ import { goalsComponent } from './components/goals/goals.component'
 import { relatedformsComponent } from './components/relatedforms/relatedforms.component'
 import { approvalsComponent } from './components/approvals/approvals.component'
 
+import { CalendarService } from './components/calendar/calendar.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -33,7 +35,7 @@ import { approvalsComponent } from './components/approvals/approvals.component'
     approvalsComponent,
   ],
   providers: [
-
+    CalendarService
   ]
 })
 export class DashboardModule {}
