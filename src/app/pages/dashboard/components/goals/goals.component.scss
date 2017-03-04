@@ -1,3 +1,51 @@
-h1 {
-  color: red;
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  .lx-nav {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 14px 20px;
+    border-bottom: 1px solid #eee;
+    .lx-title {
+      span {
+        margin: 7px;
+        font-size: 18px;
+      }
+    }
+    .right {
+      button {
+        color: white;
+        border: none;
+        padding: 7px 14px;
+        background: #458bd6;
+        border-radius: 3px;
+      }
+      .fa-filter {
+        color: #aaa;
+        margin: 4px 10px 0px 14px;
+        font-size: 1.5em;
+      }
+    }
+  }
+  .content {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      svg {
+        width: 170px;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
 }

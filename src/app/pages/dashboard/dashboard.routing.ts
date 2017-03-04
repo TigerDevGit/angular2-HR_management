@@ -16,6 +16,7 @@ export const routes: Routes = [
     path: '',
     component: Dashboard,
     children: [
+      { path: '', redirectTo: 'feeds' },
       { path: 'feeds', component: feedsComponent },
       { path: 'profile', component: profileComponent },
       { path: 'calendar', component: calendarComponent },
